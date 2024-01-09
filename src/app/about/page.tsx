@@ -93,7 +93,13 @@ export default function About() {
         <Experience
           company="Your Creative People"
           dates="Jan 2011 – Apr 2018"
-          skills={['JavaScript', 'HTML/CSS', 'Photoshop', 'Illustrator']}
+          skills={[
+            'JavaScript',
+            'HTML/CSS',
+            '.NET',
+            'Photoshop',
+            'Illustrator',
+          ]}
           title="Lead Interactive Designer/Developer"
         >
           During Mike&apos;s time at YCP, he had a significant impact on the
