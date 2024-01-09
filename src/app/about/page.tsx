@@ -8,7 +8,7 @@ export default function About() {
   return (
     <>
       <HeaderLogo />
-      <Section heading="About">
+      <Section heading="About" bg="strong" grid>
         <p>
           Mike is an accomplished UI/UX engineer and design system leader with
           8+ years of frontend engineering expertise complemented by an
@@ -55,7 +55,7 @@ export default function About() {
             'HTML/CSS',
             'Cypress',
             'Figma',
-            'React.js',
+            'React',
             'Storybook',
             'TanStack Table',
           ]}
@@ -74,7 +74,7 @@ export default function About() {
         <Experience
           company="ACS Technologies"
           dates="Apr 2018 – Aug 2021"
-          skills={['Sketch', 'Figma', 'ProtoPie', 'React.js', 'Illustrator']}
+          skills={['Sketch', 'Figma', 'ProtoPie', 'React', 'Illustrator']}
           title="Senior UX Designer"
         >
           As the primary UX designer for three feature teams, Mike played a

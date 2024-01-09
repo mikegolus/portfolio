@@ -1,0 +1,15 @@
+.base {
+  display: inline-block;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 1em 2em;
+  border: 1px solid var(--stroke-strong);
+  border-radius: 999rem;
+  transition: 150ms;
+}
+
+.base:hover {
+  background: var(--button-hover);
+}

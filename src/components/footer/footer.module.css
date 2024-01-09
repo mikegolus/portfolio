@@ -3,5 +3,6 @@
 	padding-block: var(--page-padding-block);
 	font-size: 0.875rem;
 	letter-spacing: 0.1em;
-	color: var(--text-lightest)
+	color: var(--text-lightest);
+	text-align: center;
 }

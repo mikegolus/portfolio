@@ -1,7 +1,29 @@
 .section {
-  background: var(--bg);
+  background-color: var(--bg);
   padding-inline: var(--page-padding-inline);
   padding-block: var(--page-padding-block);
+}
+
+.no-top-padding {
+  padding-block-start: 0;
+}
+
+.strong {
+  background-color: var(--bg-strong);
+}
+
+.strongest {
+  background-color: var(--bg-strongest);
+}
+
+.grid {
+  background-image: radial-gradient(var(--stroke-light) 1px, transparent 0);
+  background-size: 28px 28px;
+  background-position: center;
+}
+
+.strongest.grid {
+  background-image: radial-gradient(var(--stroke) 1px, transparent 0);
 }
 
 .section:first-of-type {
@@ -35,12 +57,19 @@
   font-size: 1.35rem;
   line-height: 1.65em;
   color: var(--text-light);
-  margin-block-end: 1rem;
+}
+
+.section p:not(:last-child) {
+  margin-block-end: 2rem;
 }
 
 @media screen and (max-width: 640px) {
+  .section:first-of-type {
+    padding-top: 10rem;
+  }
+
   .section h2.large {
-    font-size: 3.5rem;
+    font-size: 2.75rem;
   }
   .section p {
     font-size: 1rem;

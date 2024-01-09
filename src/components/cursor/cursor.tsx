@@ -14,7 +14,7 @@ export const Cursor = () => {
   })
   const [targetIsHover, setTargetIsHover] = useState(false)
 
-  const getCursorPosition = useCallback((e: MouseEvent) => {
+  const handleGetCursorPosition = useCallback((e: MouseEvent) => {
     setCursorPosition({ x: e.clientX, y: e.clientY })
     const element = document.elementFromPoint(e.clientX, e.clientY)
     if (
@@ -27,12 +27,18 @@ export const Cursor = () => {
     }
   }, [])
 
+  const handleSetCursorInactive = useCallback(() => {
+    setCursorPosition({ x: null, y: null })
+  }, [])
+
   useEffect(() => {
-    document.addEventListener('mousemove', getCursorPosition)
+    document.addEventListener('mousemove', handleGetCursorPosition)
+    document.addEventListener('mouseleave', handleSetCursorInactive)
     return () => {
-      document.removeEventListener('mousemove', getCursorPosition)
+      document.removeEventListener('mousemove', handleGetCursorPosition)
+      document.removeEventListener('mouseleave', handleSetCursorInactive)
     }
-  }, [getCursorPosition])
+  }, [handleGetCursorPosition, handleSetCursorInactive])
 
   if (cursorPosition.x === null || cursorPosition.y === null) {
     return null
@@ -42,6 +48,12 @@ export const Cursor = () => {
     <>
       <div
         className={styles.primary}
+        style={{
+          transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
+        }}
+      />
+      <div
+        className={styles.ghost}
         style={{
           transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
         }}

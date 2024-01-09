@@ -29,6 +29,9 @@
   --stroke: var(--neutral-400);
   --stroke-light: var(--neutral-300);
   --stroke-strong: var(--neutral-500);
+  --button-hover: var(--neutral-300);
+  --cursor: var(--neutral-600);
+  --invert: var(--black);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,6 +46,9 @@
     --stroke: var(--neutral-700);
     --stroke-light: var(--neutral-800);
     --stroke-strong: var(--neutral-600);
+    --button-hover: var(--neutral-800);
+    --cursor: var(--neutral-500);
+    --invert: var(--white);
   }
 }
 
@@ -83,5 +89,6 @@ button {
 @media screen and (max-width: 640px) {
   :root {
     --page-padding-inline: 1.5rem;
+    --page-padding-block: 4rem;
   }
 }
