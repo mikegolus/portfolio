@@ -1,0 +1,51 @@
+.intro {
+  min-height: 100dvh;
+  display: grid;
+  align-items: center;
+  background-image: radial-gradient(var(--stroke-light) 1px, transparent 0);
+  background-size: 28px 28px;
+  background-position: center;
+  padding-inline: var(--page-padding-inline);
+  padding-block: var(--page-padding-block);
+}
+
+.content {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  text-align: center;
+}
+
+.logo {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.copy {
+  max-width: 56ch;
+  margin-inline: auto;
+  margin-block-start: 3rem;
+}
+
+.copy h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.copy h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.copy p {
+  line-height: 1.5em;
+  color: var(--text-light)
+}
+
+@media screen and (max-width: 640px) {
+  .copy h2 {
+    font-size: 2.25rem;
+  }
+}

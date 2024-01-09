@@ -1,0 +1,15 @@
+.project {
+  background: var(--bg-strongest);
+  border-radius: var(--rounded);
+  overflow: clip;
+}
+
+.image {
+  aspect-ratio: 8/5;
+}
+
+@media (prefers-color-scheme: light) {
+  .project {
+    box-shadow: 0 8px 36px rgba(0,0,0,0.05);
+  }
+}

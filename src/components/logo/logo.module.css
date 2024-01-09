@@ -1,0 +1,47 @@
+.logo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  pointer-events: none;
+}
+
+.end.logo {
+  opacity: 1;
+}
+
+.stroke {
+  fill: none;
+}
+
+.stroke path {
+  stroke: url(#linear);
+  stroke-width: 9;
+}
+
+.filled {
+  fill: url(#linear);
+}
+
+.stroke .line1 {
+  stroke-width: 3;
+  stroke-dasharray: 150;
+  stroke: var(--bg);
+  stroke-dashoffset: 0;
+  transition: 3s stroke-dashoffset;
+}
+
+.end.stroke .line1 {
+  stroke-dashoffset: 300;
+}
+
+.stroke .line2 {
+  stroke-width: 1.5;
+  stroke-dasharray: 200;
+  stroke: var(--bg);
+  stroke-dashoffset: 0;
+  transition: 3s stroke-dashoffset;
+}
+
+.end.stroke .line2 {
+  stroke-dashoffset: -400;
+}

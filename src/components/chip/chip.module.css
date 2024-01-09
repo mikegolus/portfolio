@@ -1,0 +1,11 @@
+.base {
+  padding: 1em 1.5em;
+  background: var(--bg-strongest);
+  border-radius: 999rem;
+}
+
+@media screen and (max-width: 640px) {
+  .base {
+    font-size: 0.875rem;
+  }
+}
