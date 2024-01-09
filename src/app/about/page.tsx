@@ -25,7 +25,15 @@ export default function About() {
         <Experience
           company="Terratory"
           dates="Aug 2023 – Present"
-          skills={['TypeScript', 'Elixir', 'Phoenix', 'Figma', 'HTML/CSS']}
+          skills={[
+            'Elixir',
+            'Phoenix',
+            'JavaScript/TypeScript',
+            'Postgres',
+            'Tailwind',
+            'HTML/CSS',
+            'Figma',
+          ]}
           title="Frontend Engineer"
         >
           Mike is currently working on building a layout and core component
@@ -43,7 +51,8 @@ export default function About() {
           company="Extend"
           dates="Aug 2021 – Dec 2023"
           skills={[
-            'TypeScript',
+            'JavaScript/TypeScript',
+            'HTML/CSS',
             'Cypress',
             'Figma',
             'React.js',
