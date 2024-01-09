@@ -1,34 +1,38 @@
-.primary {
-  position: fixed;
-  z-index: 999;
-  left: -5px;
-  top: -5px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--text);
-  pointer-events: none;
-}
+@media (hover: hover) {
 
-.secondary {
-  position: fixed;
-  z-index: 999;
-  left: -14px;
-  top: -14px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--text);
-  opacity: 0.08;
-  transition-property: left, top, width, height, opacity;
-  transition-duration: 300ms;
-  pointer-events: none;
-}
+  .primary {
+    position: fixed;
+    z-index: 999;
+    left: -5px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text);
+    pointer-events: none;
+  }
 
-.secondary.hover {
-  left: -26px;
-  top: -26px;
-  width: 52px;
-  height: 52px;
-  opacity: 0.10;
+  .secondary {
+    position: fixed;
+    z-index: 999;
+    left: -14px;
+    top: -14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--text);
+    opacity: 0.08;
+    transition-property: left, top, width, height, opacity;
+    transition-duration: 300ms;
+    pointer-events: none;
+  }
+
+  .secondary.hover {
+    left: -26px;
+    top: -26px;
+    width: 52px;
+    height: 52px;
+    opacity: 0.10;
+  }
+
 }
