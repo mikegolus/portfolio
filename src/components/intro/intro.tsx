@@ -1,5 +1,4 @@
 import { Logo } from '../logo/logo'
-import { Sheet } from '../modal/modal'
 import { WordSwapper } from '../word-swapper/word-swapper'
 import styles from './intro.module.css'
 
