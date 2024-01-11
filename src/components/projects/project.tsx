@@ -6,6 +6,7 @@ import Image from 'next/image'
 import { Chip } from '../chip/chip'
 import Link from 'next/link'
 import cx from 'classnames'
+import { motion } from 'framer-motion'
 
 interface ProjectProps {
   label: string
@@ -25,12 +26,14 @@ export const Project: FC<ProjectProps> = ({
   skills,
 }) => (
   <div className={styles.base}>
-    <Wrapper
-      href={href}
-      className={cx(styles.image, href && styles['has-link'])}
-    >
-      <Image fill objectFit="cover" src={image} alt={imageAlt} />
-    </Wrapper>
+    <motion.div layoutId={label}>
+      <Wrapper
+        href={href}
+        className={cx(styles.image, href && styles['has-link'])}
+      >
+        <Image fill objectFit="cover" src={image} alt={imageAlt} />
+      </Wrapper>
+    </motion.div>
     <div className={styles.body}>
       <div className={styles.text}>
         <Wrapper href={href} className={styles.label}>
