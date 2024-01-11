@@ -23,10 +23,10 @@ export const Intro = () => {
               UI/UX{' '}
               <WordSwapper
                 words={[
-                  { string: 'Engineer', delay: 4000 },
-                  { string: 'Designer', delay: 4000 },
-                  { string: 'Advocate', delay: 4000 },
-                  { string: 'Leader', delay: 4000 },
+                  { string: 'Engineer', delay: 3200 },
+                  { string: 'Designer', delay: 3200 },
+                  { string: 'Advocate', delay: 3200 },
+                  { string: 'Leader', delay: 3200 },
                 ]}
               />
             </div>
