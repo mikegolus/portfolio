@@ -18,6 +18,7 @@
   --black: #000000;
 
   --magenta: #F60AD0;
+  --cyan: #0DC6EE;
 
   --bg: var(--white);
   --bg-strong: var(--neutral-100);
@@ -26,6 +27,7 @@
   --text: var(--neutral-950);
   --text-light: var(--neutral-600);
   --text-lightest: var(--neutral-500);
+  --text-backdrop: var(--neutral-300);
   --stroke: var(--neutral-400);
   --stroke-light: var(--neutral-300);
   --stroke-strong: var(--neutral-500);
@@ -43,6 +45,7 @@
     --text: var(--neutral-100);
     --text-light: var(--neutral-500);
     --text-lightest: var(--neutral-600);
+    --text-backdrop: var(--neutral-800);
     --stroke: var(--neutral-700);
     --stroke-light: var(--neutral-800);
     --stroke-strong: var(--neutral-600);

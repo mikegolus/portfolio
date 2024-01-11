@@ -1,6 +1,9 @@
 import { Logo } from '../logo/logo'
 import { WordSwapper } from '../word-swapper/word-swapper'
 import styles from './intro.module.css'
+import { Source_Code_Pro } from 'next/font/google'
+
+const sourceCodePro = Source_Code_Pro({ subsets: ['latin'] })
 
 export const Intro = () => {
   return (
@@ -11,30 +14,22 @@ export const Intro = () => {
         </div>
         <div className={styles.copy}>
           <h1>Hello, I&apos;m Mike Golus.</h1>
-          <h2
-            style={{
-              display: 'flex',
-              gap: 16,
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <div>
-              UI/UX{' '}
-              <WordSwapper
-                words={[
-                  { string: 'Engineer', delay: 3200 },
-                  { string: 'Designer', delay: 3200 },
-                  { string: 'Advocate', delay: 3200 },
-                  { string: 'Leader', delay: 3200 },
-                ]}
-              />
-            </div>
+          <h2 className={sourceCodePro.className}>
+            <div className={styles['shell-symbol']}>$</div>
+            <div className={styles.command}>UI/UX.</div>
+            <WordSwapper
+              words={[
+                { string: 'Engineer', delay: 3200 },
+                { string: 'Designer', delay: 3200 },
+                { string: 'Advocate', delay: 3200 },
+                { string: 'Leader', delay: 3200 },
+              ]}
+            />
           </h2>
           <p>
-            I like to work with passionate people to build great products. Over
-            the years, I&apos;ve built products with JavaScript, TypeScript,
-            HTML/CSS, React, Next.js, .NET, Elixir, and Phoenix.
+            I like to work with passionate people to build great products.
+            I&apos;ve built products with JavaScript, TypeScript, HTML/CSS,
+            React, Next.js, .NET, Elixir, and Phoenix.
           </p>
         </div>
       </div>

@@ -29,14 +29,19 @@
 
 .copy h1 {
   font-size: 1.5rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1.2rem;
 }
 
 .copy h2 {
-  font-size: 3rem;
+  position: relative;
+  display: inline-block;
+  font-size: 2.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 1rem;
+  background: var(--text-backdrop);
+  border-radius: var(--rounded);
+  padding: 0.1em 0.5em;
+  margin-bottom: 1.2rem;
 }
 
 .copy p {
@@ -44,8 +49,20 @@
   color: var(--text-light)
 }
 
+.shell-symbol {
+  display: inline-block;
+  margin-right: 0.25em;
+}
+
+.command {
+  display: inline-block;
+  color: var(--cyan);
+}
+
 @media screen and (max-width: 640px) {
   .copy h2 {
-    font-size: 2.25rem;
+    font-size: 2rem;
+    padding-inline: 0.3em;
+    border-radius: calc(var(--rounded) / 2);
   }
 }
