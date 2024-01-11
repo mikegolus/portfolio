@@ -16,13 +16,14 @@ export const Intro = () => {
           <h1>Hello, I&apos;m Mike Golus.</h1>
           <h2 className={sourceCodePro.className}>
             <div className={styles['shell-symbol']}>$</div>
-            <div className={styles.command}>UI/UX.</div>
+            <div className={styles.command}>uiux.</div>
             <WordSwapper
               words={[
                 { string: 'Engineer', delay: 3200 },
                 { string: 'Designer', delay: 3200 },
-                { string: 'Advocate', delay: 3200 },
                 { string: 'Leader', delay: 3200 },
+                { string: 'Advocate', delay: 3200 },
+                { string: 'Innovator', delay: 3200 },
               ]}
             />
           </h2>

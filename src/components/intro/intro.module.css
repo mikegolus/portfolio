@@ -33,15 +33,21 @@
 }
 
 .copy h2 {
+  overflow: hidden;
   position: relative;
   display: inline-block;
-  font-size: 2.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 3rem;
+  letter-spacing: 0.04em;
   background: var(--text-backdrop);
   border-radius: var(--rounded);
   padding: 0.1em 0.5em;
   margin-bottom: 1.2rem;
+}
+
+@media (prefers-color-scheme: light) {
+  .copy h2 {
+    box-shadow: 0 8px 36px rgba(0,0,0,0.05);
+  }
 }
 
 .copy p {
@@ -52,6 +58,7 @@
 .shell-symbol {
   display: inline-block;
   margin-right: 0.25em;
+  color: var(--text-light);
 }
 
 .command {
@@ -63,6 +70,7 @@
   .copy h2 {
     font-size: 2rem;
     padding-inline: 0.3em;
+    margin-inline: -0.1em;
     border-radius: calc(var(--rounded) / 2);
   }
 }

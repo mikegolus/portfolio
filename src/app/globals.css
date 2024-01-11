@@ -20,14 +20,14 @@
   --magenta: #F60AD0;
   --cyan: #0DC6EE;
 
-  --bg: var(--white);
+  --bg: var(--neutral-200);
   --bg-strong: var(--neutral-100);
-  --bg-strongest: var(--neutral-200);
+  --bg-strongest: var(--white);
   --bg-translucent: rgba(255,255,255,0.4);
   --text: var(--neutral-950);
   --text-light: var(--neutral-600);
   --text-lightest: var(--neutral-500);
-  --text-backdrop: var(--neutral-300);
+  --text-backdrop: var(--white);
   --stroke: var(--neutral-400);
   --stroke-light: var(--neutral-300);
   --stroke-strong: var(--neutral-500);
