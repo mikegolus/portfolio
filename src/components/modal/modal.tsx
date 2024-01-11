@@ -61,20 +61,14 @@ export const Sheet = () => {
   )
   const bodyBorderRadius = useTransform(y, [0, h], [SHEET_RADIUS, 0])
 
-  useMotionValueEvent(
-    bodyScale,
-    'change',
-    (v) => (rootElement.style.scale = `${v}`),
+  useMotionValueEvent(bodyScale, 'change', (v) =>
+    rootElement ? (rootElement.style.scale = `${v}`) : undefined,
   )
-  useMotionValueEvent(
-    bodyTranslate,
-    'change',
-    (v) => (rootElement.style.translate = `0 ${v}px`),
+  useMotionValueEvent(bodyTranslate, 'change', (v) =>
+    rootElement ? (rootElement.style.translate = `0 ${v}px`) : undefined,
   )
-  useMotionValueEvent(
-    bodyBorderRadius,
-    'change',
-    (v) => (rootElement.style.borderRadius = `${v}px`),
+  useMotionValueEvent(bodyBorderRadius, 'change', (v) =>
+    rootElement ? (rootElement.style.borderRadius = `${v}px`) : '',
   )
 
   return (
