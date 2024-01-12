@@ -4,21 +4,13 @@ import {
   animate,
   AnimatePresence,
   motion,
-  useMotionTemplate,
+  PanInfo,
   useMotionValue,
-  useMotionValueEvent,
-  useTransform,
 } from 'framer-motion'
-import {
-  Button,
-  Dialog,
-  Heading,
-  Modal,
-  ModalOverlay,
-} from 'react-aria-components'
-import { useState } from 'react'
+import { Dialog, Heading, Modal, ModalOverlay } from 'react-aria-components'
+import { FC, useCallback, useRef, useState } from 'react'
 import styles from './modal.module.css'
-import { useAppContext } from '../app/app'
+import cx from 'classnames'
 
 // Wrap React Aria modal components so they support framer-motion values.
 const MotionModal = motion(Modal)
@@ -36,77 +28,69 @@ const staticTransition = {
   ease: [0.32, 0.72, 0, 1],
 }
 
-const SHEET_MARGIN = 34
-const SHEET_RADIUS = 12
+interface SheetProps {
+  onOpenChange?: (isOpen: boolean) => void
+  open?: boolean
+}
 
-export const Sheet = () => {
-  const [isOpen, setOpen] = useState(false)
-  const h = window.innerHeight - SHEET_MARGIN
-  const y = useMotionValue(h)
-  const bgOpacity = useTransform(y, [0, h], [0.4, 0])
-  const bg = useMotionTemplate`rgba(0, 0, 0, ${bgOpacity})`
-  const { rootElementRef } = useAppContext()
-  const rootElement = rootElementRef?.current
+export const Sheet: FC<SheetProps> = ({ onOpenChange, open }) => {
+  const [interactive, setInteractive] = useState(false)
+  const dialogRef = useRef<HTMLDivElement>(null)
 
-  // Scale the body down and adjust the border radius when the sheet is open.
-  const bodyScale = useTransform(
-    y,
-    [0, h],
-    [(window.innerWidth - SHEET_MARGIN) / window.innerWidth, 1],
-  )
-  const bodyTranslate = useTransform(
-    y,
-    [0, h],
-    [SHEET_MARGIN - SHEET_RADIUS, 0],
-  )
-  const bodyBorderRadius = useTransform(y, [0, h], [SHEET_RADIUS, 0])
+  const y = useMotionValue(0)
 
-  useMotionValueEvent(bodyScale, 'change', (v) =>
-    rootElement ? (rootElement.style.scale = `${v}`) : undefined,
-  )
-  useMotionValueEvent(bodyTranslate, 'change', (v) =>
-    rootElement ? (rootElement.style.translate = `0 ${v}px`) : undefined,
-  )
-  useMotionValueEvent(bodyBorderRadius, 'change', (v) =>
-    rootElement ? (rootElement.style.borderRadius = `${v}px`) : '',
+  const handleAnimationComplete = useCallback(() => {
+    setInteractive(true)
+  }, [])
+
+  const handleDragEnd = useCallback(
+    (
+      _e: MouseEvent | TouchEvent | PointerEvent,
+      { offset, velocity }: PanInfo,
+    ) => {
+      if (
+        (dialogRef.current &&
+          offset.y > dialogRef.current?.clientHeight * 0.5) ||
+        velocity.y > 10
+      ) {
+        if (onOpenChange) {
+          setInteractive(false)
+          onOpenChange(false)
+        }
+      } else {
+        animate(y, 0, { ...inertiaTransition, min: 0, max: 0 })
+      }
+    },
+    [onOpenChange, y],
   )
 
   return (
-    <>
-      <Button onPress={() => setOpen(true)}>Open sheet</Button>
-      <AnimatePresence>
-        {isOpen && (
-          <MotionModalOverlay
-            // Force the modal to be open when AnimatePresence renders it.
-            isOpen
-            onOpenChange={setOpen}
-            className={styles.overlay}
-            style={{ backgroundColor: bg as any }}
+    <AnimatePresence>
+      {open && (
+        <MotionModalOverlay
+          // Force the modal to be open when AnimatePresence renders it.
+          isOpen
+          onOpenChange={onOpenChange}
+          className={cx(styles.overlay, interactive && styles.interactive)}
+          isDismissable
+        >
+          <MotionModal
+            className={styles.base}
+            initial={{ y: '100%' }}
+            animate={{ y: '0%' }}
+            exit={{ y: '100%' }}
+            transition={staticTransition}
+            onAnimationComplete={handleAnimationComplete}
+            style={{
+              y,
+            }}
+            drag="y"
+            dragConstraints={{ top: 0 }}
+            onDragEnd={handleDragEnd}
           >
-            <MotionModal
-              className={styles.base}
-              initial={{ y: h }}
-              animate={{ y: 0 }}
-              exit={{ y: h }}
-              transition={staticTransition}
-              style={{
-                y,
-                top: SHEET_MARGIN,
-                // Extra padding at the bottom to account for rubber band scrolling.
-                paddingBottom: window.screen.height,
-              }}
-              drag="y"
-              dragConstraints={{ top: 0 }}
-              onDragEnd={(e, { offset, velocity }) => {
-                if (offset.y > window.innerHeight * 0.75 || velocity.y > 10) {
-                  setOpen(false)
-                } else {
-                  animate(y, 0, { ...inertiaTransition, min: 0, max: 0 })
-                }
-              }}
-            >
+            <Dialog className={styles.dialog} ref={dialogRef}>
               <div className={styles['drag-affordance']} />
-              <Dialog className={styles.dialog}>
+              <div className={styles.content}>
                 <Heading slot="title">Modal sheet</Heading>
                 <p>
                   This is a dialog with a custom modal overlay built with React
@@ -117,11 +101,38 @@ export const Sheet = () => {
                   Aenean sit amet nisl blandit, pellentesque eros eu,
                   scelerisque eros. Sed cursus urna at nunc lacinia dapibus.
                 </p>
-              </Dialog>
-            </MotionModal>
-          </MotionModalOverlay>
-        )}
-      </AnimatePresence>
-    </>
+                <p>
+                  This is a dialog with a custom modal overlay built with React
+                  Aria Components and Framer Motion.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aenean sit amet nisl blandit, pellentesque eros eu,
+                  scelerisque eros. Sed cursus urna at nunc lacinia dapibus.
+                </p>
+                <p>
+                  This is a dialog with a custom modal overlay built with React
+                  Aria Components and Framer Motion.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aenean sit amet nisl blandit, pellentesque eros eu,
+                  scelerisque eros. Sed cursus urna at nunc lacinia dapibus.
+                </p>
+                <p>
+                  This is a dialog with a custom modal overlay built with React
+                  Aria Components and Framer Motion.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aenean sit amet nisl blandit, pellentesque eros eu,
+                  scelerisque eros. Sed cursus urna at nunc lacinia dapibus.
+                </p>
+              </div>
+            </Dialog>
+          </MotionModal>
+        </MotionModalOverlay>
+      )}
+    </AnimatePresence>
   )
 }
