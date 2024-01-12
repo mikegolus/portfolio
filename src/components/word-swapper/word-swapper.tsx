@@ -2,8 +2,8 @@
 
 import { FC, useEffect, useState } from 'react'
 import styles from './word-swapper.module.css'
-import useResizeObserver from 'use-resize-observer'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useMeasure } from '@uidotdev/usehooks'
 
 type Word = {
   string: string
@@ -24,13 +24,13 @@ export const WordSwapper: FC<WordSwapperProps> = ({ words }) => {
     }, words[index].delay)
   }, [index, setIndex, words, words.length])
 
-  const { ref, width } = useResizeObserver<HTMLDivElement>()
+  const [ref, { width }] = useMeasure<HTMLDivElement>()
 
   return (
     <motion.div
       className={styles.base}
-      initial={{ width: width }}
-      animate={{ width: width }}
+      initial={{ width: width! }}
+      animate={{ width: width! }}
     >
       <div ref={ref} className={styles['word-container']}>
         <AnimatePresence initial={false}>

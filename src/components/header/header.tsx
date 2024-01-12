@@ -1,10 +1,11 @@
 'use client'
 
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import styles from './header.module.css'
 import cx from 'classnames'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useClickAway } from '@uidotdev/usehooks'
 
 export const Header = () => {
   const [navActive, setNavActive] = useState(false)
@@ -13,11 +14,26 @@ export const Header = () => {
     setNavActive(!navActive)
   }, [navActive])
 
+  const handleScroll = useCallback(() => {
+    setNavActive(false)
+  }, [])
+
+  const navPanelRef = useClickAway<HTMLElement>(() => {
+    setNavActive(false)
+  })
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll)
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, [handleScroll])
+
   const pathname = usePathname()
 
   return (
     <header className={styles.header}>
-      <nav className={cx(navActive && styles.active)}>
+      <nav ref={navPanelRef} className={cx(navActive && styles.active)}>
         <button
           type="button"
           className={styles['menu-toggle']}
