@@ -3,6 +3,7 @@ import { HeaderLogo } from '@/components/header-logo/header-logo'
 import { LetsTalk } from '@/components/lets-talk/lets-talk'
 import { Project } from '@/components/projects/project'
 import { Section } from '@/components/section/section'
+import image from './a-classic-retold-main.png'
 
 export default function PrettierPeriodicTable() {
   return (
@@ -10,7 +11,7 @@ export default function PrettierPeriodicTable() {
       <HeaderLogo />
       <Section>
         <Project
-          image="/a-classic-retold-main.png"
+          image={image}
           imageAlt="A Classic Retold website screenshot"
           label="A Classic Retold"
           sublabel="Client Project"

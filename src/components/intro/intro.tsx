@@ -16,7 +16,9 @@ export const Intro = () => {
           <h1>Hello, I&apos;m Mike Golus.</h1>
           <h2 className={sourceCodePro.className}>
             <div className={styles['shell-symbol']}>$</div>
-            <div className={styles.command}>uiux.</div>
+            <div className={styles.command}>
+              ui<span className={styles.slash}>/</span>ux.
+            </div>
             <WordSwapper
               words={[
                 { string: 'Engineer', delay: 3200 },

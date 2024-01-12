@@ -2,16 +2,15 @@
 
 import { FC, PropsWithChildren } from 'react'
 import styles from './project.module.css'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { Chip } from '../chip/chip'
 import Link from 'next/link'
 import cx from 'classnames'
-import { motion } from 'framer-motion'
 
 interface ProjectProps {
   label: string
   href?: string
-  image: string
+  image: StaticImageData
   imageAlt: string
   skills: string[]
   sublabel: string
@@ -26,14 +25,18 @@ export const Project: FC<ProjectProps> = ({
   skills,
 }) => (
   <div className={styles.base}>
-    <motion.div layoutId={label}>
-      <Wrapper
-        href={href}
-        className={cx(styles.image, href && styles['has-link'])}
-      >
-        <Image fill objectFit="cover" src={image} alt={imageAlt} />
-      </Wrapper>
-    </motion.div>
+    <Wrapper
+      href={href}
+      className={cx(styles.image, href && styles['has-link'])}
+    >
+      <Image
+        placeholder="blur"
+        fill
+        src={image}
+        alt={imageAlt}
+        sizes="(max-width: 768px) 100vw, (max-width: 1440px) 50vw, 33vw"
+      />
+    </Wrapper>
     <div className={styles.body}>
       <div className={styles.text}>
         <Wrapper href={href} className={styles.label}>

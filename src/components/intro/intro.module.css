@@ -66,11 +66,16 @@
   color: var(--cyan);
 }
 
+.slash {
+  display: inline-block;
+  margin-inline: -0.15em -0.1em;
+}
+
 @media screen and (max-width: 640px) {
   .copy h2 {
     font-size: 2rem;
     padding-inline: 0.3em;
-    margin-inline: -0.1em;
+    margin-inline: -0.3em;
     border-radius: calc(var(--rounded) / 2);
   }
 }
