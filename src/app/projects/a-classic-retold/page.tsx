@@ -3,7 +3,7 @@ import { HeaderLogo } from '@/components/header-logo/header-logo'
 import { LetsTalk } from '@/components/lets-talk/lets-talk'
 import { Project } from '@/components/projects/project'
 import { Section } from '@/components/section/section'
-import image from './a-classic-retold-main.png'
+import image from '../../../../public/a-classic-retold-main.png'
 
 export default function PrettierPeriodicTable() {
   return (

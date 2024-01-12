@@ -2,7 +2,7 @@ import { HeaderLogo } from '@/components/header-logo/header-logo'
 import { LetsTalk } from '@/components/lets-talk/lets-talk'
 import { Project } from '@/components/projects/project'
 import { Section } from '@/components/section/section'
-import terratoryMain from './terratory-main.png'
+import image from '../../../../public/terratory-main.png'
 
 export default function Terratory() {
   return (
@@ -10,7 +10,7 @@ export default function Terratory() {
       <HeaderLogo />
       <Section>
         <Project
-          image={terratoryMain}
+          image={image}
           imageAlt="Terratory app screenshots"
           label="Terratory"
           sublabel="Startup"

@@ -1,10 +1,10 @@
 import { Section } from '../section/section'
 import { Project } from './project'
 import styles from './projects.module.css'
-import terratoryMain from '../../app/projects/terratory/terratory-main.png'
-import whichDayMain from '../../app/projects/whichday/whichday-main.png'
-import aClassicRetoldMain from '../../app/projects/a-classic-retold/a-classic-retold-main.png'
-import prettierPeriodicTableMain from '../../app/projects/prettier-periodic-table/prettier-periodic-table-main.png'
+import terratoryMain from '../../../public/terratory-main.png'
+import whichDayMain from '../../../public/whichday-main.png'
+import aClassicRetoldMain from '../../../public/a-classic-retold-main.png'
+import prettierPeriodicTableMain from '../../../public/prettier-periodic-table-main.png'
 
 export const Projects = () => (
   <Section heading="Projects">

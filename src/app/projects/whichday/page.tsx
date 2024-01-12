@@ -3,7 +3,7 @@ import { HeaderLogo } from '@/components/header-logo/header-logo'
 import { LetsTalk } from '@/components/lets-talk/lets-talk'
 import { Project } from '@/components/projects/project'
 import { Section } from '@/components/section/section'
-import whichDayMain from './which-day-main.png'
+import image from '../../../../public/whichday-main.png'
 
 export default function WhichDay() {
   return (
@@ -11,7 +11,7 @@ export default function WhichDay() {
       <HeaderLogo />
       <Section>
         <Project
-          image={whichDayMain}
+          image={image}
           imageAlt="WhichDay.io app screenshot"
           label="WhichDay.io"
           sublabel="Solo Project"
