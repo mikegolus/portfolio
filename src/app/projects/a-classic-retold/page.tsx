@@ -21,15 +21,15 @@ export default function PrettierPeriodicTable() {
       <Section heading="Summary" noTopPadding>
         <p>
           A group of 9 authors working on a novel series collaboration needed a
-          simple website to use during a several month period of intense social
-          media marketing. During this time, the website would display preorder
-          and release date countdowns and feature the latest book being promoted
-          by the authors.
+          marketing website to use during a several month period of frequent
+          social media campaigns. During this time, the website displayed
+          preorder and release date countdowns and featured the latest book
+          being promoted by the authors.
         </p>
         <p>
-          I built this site with Next.js and Prismic so management of dates,
-          book descriptions and links, and featured content could be handed off
-          to one of the authors.
+          I built this site with Next.js and Prismic CMS so dates, book
+          descriptions, links, and featured content could be managed by the
+          authors.
         </p>
         <LinkButton
           href="https://aclassicretold.com"

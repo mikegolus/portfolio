@@ -26,12 +26,13 @@ export default function Terratory() {
           done and spend more time living the life they want.
         </p>
         <p>
-          I built a layout and core component framework in Elixir with Phoenix
-          LiveView for the Terratory PWA meant to mimic many native mobile UI
-          patterns. I also worked closely with the lead product designer to
-          establish a lightweight and highly flexible design system simplifying
-          the translation of rapidly evolving design requirements into DRY
-          frontend code throughout early ideation phases.
+          I am working with the Terratory engineering and design team to build a
+          layout and core component framework in Elixir and develop the Phoenix
+          LiveView frontend for their progressive web app meant to mimic native
+          mobile UI patterns. I also worked closely with the lead product
+          designer to establish a highly flexible design system in order to
+          simplify the translation of rapidly evolving design requirements into
+          efficient frontend code throughout early ideation phases.
         </p>
       </Section>
       <LetsTalk />

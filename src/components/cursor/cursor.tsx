@@ -64,7 +64,7 @@ export const Cursor = () => {
         animate={{
           x: cursorPosition.x,
           y: cursorPosition.y,
-          transition: { type: 'spring', mass: 0.2, damping: 10 },
+          transition: { type: 'spring', mass: 0.12, damping: 8 },
         }}
       />
     </>

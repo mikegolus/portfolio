@@ -2,7 +2,6 @@ import { Experience } from '@/components/experience/experience'
 import { HeaderLogo } from '@/components/header-logo/header-logo'
 import { LetsTalk } from '@/components/lets-talk/lets-talk'
 import { Section } from '@/components/section/section'
-import Link from 'next/link'
 
 export default function About() {
   return (
@@ -23,31 +22,6 @@ export default function About() {
       </Section>
       <Section heading="Work Experience">
         <Experience
-          company="Terratory"
-          dates="Aug 2023 – Present"
-          skills={[
-            'Elixir',
-            'Phoenix',
-            'JavaScript/TypeScript',
-            'Postgres',
-            'Tailwind',
-            'HTML/CSS',
-            'Figma',
-          ]}
-          title="Frontend Engineer"
-        >
-          Mike is currently working on building a layout and core component
-          framework in Elixir with Phoenix LiveView for a PWA meant to mimic
-          many native mobile UI patterns. He also worked closely with the lead
-          product designer{' '}
-          <Link target="_blank" href="https://andrewramos.com">
-            @Andrew Ramos
-          </Link>{' '}
-          to establish a lightweight and highly flexible design system
-          simplifying the translation of rapidly evolving design requirements
-          into DRY frontend code throughout early ideation phases.
-        </Experience>
-        <Experience
           company="Extend"
           dates="Aug 2021 – Dec 2023"
           skills={[
@@ -59,17 +33,69 @@ export default function About() {
             'Storybook',
             'TanStack Table',
           ]}
-          title="Senior Design System Engineer"
+          title="Senior Software Engineer"
         >
-          Serving as a bridge between design and engineering, Mike built and
-          maintained an extensive design system in Figma with a companion React
-          component library documented in Storybook. He mentored product
-          designers toward a system-first design methodology greatly increasing
-          UI design quality, efficiency and consistency. With his practical
-          knowledge and experience in frontend development, he functioned as the
-          engineering ambassador to the design team helping them form design
-          requirements in harmony with modern UI standards and well-established
-          internal development practices.
+          <ul>
+            <li>
+              Greatly enhanced the scalability of the frontend codebase by
+              building and maintaining an extensive and robust React component
+              library with a companion Figma design system further documented
+              with JSDocs and Storybook
+            </li>
+            <li>
+              Became a trusted GitHub code reviewer for pull requests related to
+              building new UI components or augmenting existing ones
+            </li>
+            <li>
+              Increased engineering productivity and worked toward guaranteeing
+              non-breaking changes by leveraging TypeScript and Cypress
+              component testing
+            </li>
+            <li>
+              Created a library of React hooks and utilities to make the
+              translation of common design patterns to code more seamless and
+              efficient
+            </li>
+            <li>
+              Served as engineering “ambassador” to the product design team,
+              with practical frontend engineering knowledge and experience,
+              guiding them to form design requirements in harmony with modern UI
+              standards and well-established internal development practices
+            </li>
+            <li>
+              Mentored product designers toward a system-first design
+              methodology, increasing UI design quality and consistency
+            </li>
+          </ul>
+        </Experience>
+        <Experience
+          company="Terratory"
+          dates="Aug 2023 – Present (part-time)"
+          skills={[
+            'Elixir',
+            'Phoenix',
+            'JavaScript/TypeScript',
+            'Postgres',
+            'Tailwind',
+            'HTML/CSS',
+            'Figma',
+          ]}
+          title="Frontend Engineer"
+        >
+          <ul>
+            <li>
+              Worked with the engineering and design team to build a layout and
+              core component framework in Elixir and develop the Phoenix
+              LiveView frontend for a progressive web app meant to mimic native
+              mobile UI patterns
+            </li>
+            <li>
+              Worked closely with the lead product designer to establish a
+              highly flexible design system, simplifying the translation of
+              rapidly evolving design requirements into efficient frontend code
+              throughout early ideation phases
+            </li>
+          </ul>
         </Experience>
         <Experience
           company="ACS Technologies"
@@ -77,18 +103,33 @@ export default function About() {
           skills={['Sketch', 'Figma', 'ProtoPie', 'React', 'Illustrator']}
           title="Senior UX Designer"
         >
-          As the primary UX designer for three feature teams, Mike played a
-          pivotal role in the evolution of applications that enabled users to
-          handle accounting, human resources, online giving management, and
-          community involvement. He cultivated strong, trusted relationships
-          with team members as well as department leadership. The cyclical
-          design process that he implemented moved roadmapped features through
-          ideation, prototyping, and testing. He also worked regularly with a UX
-          design focus group that cultivated a holistic understanding of
-          ACS&apos;s design ecosystem, evaluating each individual
-          solution&apos;s impact on all other touch-points. This resulted in
-          design direction that consistently aligned with business objectives,
-          instilled confidence in stakeholders, and increased user satisfaction.
+          <ul>
+            <li>
+              Served as primary UX designer for three feature teams, evolving a
+              suite of applications that enabled users to handle accounting,
+              human resources, online giving management, and community
+              involvement
+            </li>
+            <li>
+              Supplemented Sketch prototyping with React apps for even more
+              comprehensive demoing and testing of complex design concepts
+            </li>
+            <li>
+              Implemented a cyclical UX design process that guided roadmapped
+              features collaboratively through ideation, prototyping, and
+              testing
+            </li>
+            <li>
+              Worked with UX design focus groups to cultivate a holistic
+              understanding of the product ecosystem that evaluated the impact
+              of each solution on all other user touch points
+            </li>
+            <li>
+              Provided design direction that aligned with business objectives,
+              instilled confidence in stakeholders, and increased user
+              satisfaction
+            </li>
+          </ul>
         </Experience>
         <Experience
           company="Your Creative People"
@@ -102,18 +143,30 @@ export default function About() {
           ]}
           title="Lead Interactive Designer/Developer"
         >
-          During Mike&apos;s time at YCP, he had a significant impact on the
-          aesthetic and functional excellence of their web design projects,
-          earning high regard from clients. He worked to thoroughly understand
-          each client&apos;s brand and audience in order to create bespoke UI
-          frameworks that would resonate with the intended users. As the lead
-          interactive designer, he supervised several designers and helped
-          ensure their work upheld YCP&apos;s standards of excellence before
-          going to the creative director for approval. He implemented strict
-          technical standards for HTML and CSS, prioritizing efficiency and code
-          quality. Mike&apos;s involvement at YCP significantly enhanced the
-          caliber of their projects, firmly positioning them as a local leader
-          for effective online solutions.
+          <ul>
+            <li>
+              Raised the bar for the aesthetic and functional excellence of web
+              design projects, earning high regard from clients
+            </li>
+            <li>
+              Worked to thoroughly understand each client&apos;s brand and
+              audience in order to create bespoke UI frameworks that would
+              resonate with the intended users
+            </li>
+            <li>
+              Supervised several designers and helped ensure their work upheld
+              our standards of excellence before going to the Creative Director
+              for approval
+            </li>
+            <li>
+              Implemented and carried out strict technical standards for HTML,
+              CSS, and JavaScript prioritizing code efficiency and quality
+            </li>
+            <li>
+              Helped firmly position YCP as a local leader for effective online
+              solutions
+            </li>
+          </ul>
         </Experience>
       </Section>
       <LetsTalk />

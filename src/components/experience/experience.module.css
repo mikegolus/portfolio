@@ -14,12 +14,6 @@
   }
 }
 
-.base p a {
-  color: var(--text);
-  font-weight: 700;
-}
-
-.base p a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.25em;
+.base ul {
+  margin-left: 1em;
 }
