@@ -2,6 +2,7 @@
   min-height: 100svh;
   display: grid;
   align-items: center;
+  background-color: var(--bg-strong);
   background-image: radial-gradient(var(--stroke-light) 1px, transparent 0);
   background-size: 28px 28px;
   background-position: center;

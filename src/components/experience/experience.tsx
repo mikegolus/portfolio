@@ -20,7 +20,7 @@ export const Experience: FC<ExperienceProps> = ({
     <div className={styles.base}>
       <h3>{title}</h3>
       <p className={styles.company}>{`${company} • ${dates}`}</p>
-      <p>{children}</p>
+      {children}
       <div className={styles.skills}>
         {skills.map((skill) => (
           <Chip key={skill} label={skill} />

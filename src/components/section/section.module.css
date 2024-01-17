@@ -53,7 +53,8 @@
   margin-block-end: 1rem;
 }
 
-.section p {
+.section p,
+.section ul {
   font-size: 1.35rem;
   line-height: 1.65em;
   color: var(--text-light);
@@ -71,7 +72,8 @@
   .section h2.large {
     font-size: 2.75rem;
   }
-  .section p {
+  .section p,
+  .section ul {
     font-size: 1rem;
   }
 }
